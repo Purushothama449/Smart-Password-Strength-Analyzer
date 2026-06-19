@@ -95,7 +95,7 @@ st.markdown("""
 
 # ---------------- PASSWORD GENERATOR ----------------
 
-st.subheader("🔐 Password Generator")
+st.subheader(" Password Generator")
 
 if st.button("Generate Secure Password"):
     st.success(generate_password())
@@ -115,7 +115,7 @@ if password:
     entropy = calculate_entropy(password)
     crack_time = estimate_crack_time(entropy)
 
-    st.subheader("🔐 Cryptographic Hashes")
+    st.subheader(" Cryptographic Hashes")
 
     hashes = generate_hashes(password)
 
@@ -150,7 +150,7 @@ SHA256 and SHA512 are stronger cryptographic hash algorithms.
     with open(pdf_file, "rb") as file:
 
         st.download_button(
-            label="📄 Download Security Report",
+            label=" Download Security Report",
             data=file,
             file_name="Password_Security_Report.pdf",
             mime="application/pdf"
@@ -190,20 +190,20 @@ SHA256 and SHA512 are stronger cryptographic hash algorithms.
 
     st.plotly_chart(fig, use_container_width=True)
     if score < 30:
-     st.error("🔴 CRITICAL SECURITY RISK")
+     st.error(" CRITICAL SECURITY RISK")
 
     elif score < 60:
-     st.warning("🟠 MODERATE SECURITY")
+     st.warning(" MODERATE SECURITY")
 
     elif score < 80:
-     st.info("🟡 GOOD SECURITY")
+     st.info(" GOOD SECURITY")
 
     else:
-     st.success("🟢 MAXIMUM SECURITY")
+     st.success(" MAXIMUM SECURITY")
 
     # ---------------- CHECKLIST ----------------
 
-    st.subheader("🔍 Security Checklist")
+    st.subheader(" Security Checklist")
 
     checks = {
         "Length ≥ 12": len(password) >= 12,
@@ -214,7 +214,7 @@ SHA256 and SHA512 are stronger cryptographic hash algorithms.
     }
 
     for item, passed in checks.items():
-        st.write(f"{'✅' if passed else '❌'} {item}")
+        st.write(f"{'' if passed else ''} {item}")
 
     # ---------------- SUGGESTIONS ----------------
 
@@ -236,14 +236,14 @@ SHA256 and SHA512 are stronger cryptographic hash algorithms.
         suggestions.append("Add special characters")
 
     if suggestions:
-        st.subheader("💡 Suggestions")
+        st.subheader(" Suggestions")
 
         for s in suggestions:
             st.warning(s)
 
     # ---------------- SECURITY REPORT ----------------
 
-    st.subheader("📊 Security Report")
+    st.subheader(" Security Report")
 
     st.progress(score)
 
@@ -287,13 +287,13 @@ SHA256 and SHA512 are stronger cryptographic hash algorithms.
     # ---------------- FINAL RESULT ----------------
 
     if strength == "Strong":
-        st.success("🟢 Strong Password")
+        st.success(" Strong Password")
 
     elif strength == "Medium":
-        st.warning("🟡 Medium Password")
+        st.warning(" Medium Password")
 
     else:
-        st.error("🔴 Weak Password")
+        st.error(" Weak Password")
 
 # ---------------- ABOUT ----------------
 
