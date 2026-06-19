@@ -1,6 +1,7 @@
 import math
 import string
 import hashlib
+import os
 
 def calculate_entropy(password):
     charset = 0
@@ -73,7 +74,13 @@ def estimate_crack_time(entropy):
     else:
         return f"{seconds/31536000:.2f} years"
 def is_common_password(password):
-    with open("common_passwords.txt", "r") as file:
+
+    file_path = os.path.join(
+        os.path.dirname(__file__),
+        "common_passwords.txt"
+    )
+
+    with open(file_path, "r", encoding="utf-8") as file:
         common = [line.strip() for line in file]
 
     return password.lower() in common
