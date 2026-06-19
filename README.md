@@ -129,6 +129,11 @@ Through this project, I gained practical experience in:
 
 ---
 
+## Live Demo:
+https://smart-password-strength-analyzer-2zqnmk228bf9kk8bexc6lw.streamlit.app/
+
+---
+
 ##  Author
 
 **Purushothama K C**
